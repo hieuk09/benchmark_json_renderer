@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  username: user
+  password:
+  host: localhost
+  port: 5432
+  encoding: unicode
+
+development:
+  <<: *default
+  database: benchmark_json_renderer_development
+
+test:
+  <<: *default
+  database: benchmark_json_renderer_test
