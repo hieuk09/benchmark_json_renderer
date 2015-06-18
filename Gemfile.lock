@@ -42,6 +42,7 @@ GEM
       rest-client (~> 1.7, >= 1.7.3)
       rspec (~> 3.1, >= 3.1.0)
     arel (6.0.0)
+    benchmark-ips (2.2.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -185,6 +186,7 @@ PLATFORMS
 
 DEPENDENCIES
   airborne
+  benchmark-ips
   byebug
   coffee-rails (~> 4.1.0)
   faker
