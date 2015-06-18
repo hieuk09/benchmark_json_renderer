@@ -3,7 +3,7 @@ class Book < ActiveRecord::Base
 
   def as_json(*args)
     super.merge(
-      author: author
+      author: author.as_json
     )
   end
 end
