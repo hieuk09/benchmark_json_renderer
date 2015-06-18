@@ -70,10 +70,15 @@ GEM
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
+    multi_json (1.11.1)
     newrelic_rpm (3.12.0.288)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    oj (2.12.9)
+    oj_mimic_json (1.0.1)
     pg (0.18.2)
+    rabl (0.11.6)
+      activesupport (>= 2.3.14)
     rabl-rails (0.4.1)
       activesupport (>= 3.1)
       railties (>= 3.1)
@@ -148,8 +153,12 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   faker
   jquery-rails
+  multi_json
   newrelic_rpm
+  oj
+  oj_mimic_json
   pg
+  rabl
   rabl-rails
   rails (= 4.2.2)
   sass-rails (~> 5.0)

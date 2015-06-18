@@ -17,10 +17,14 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'rabl'
 gem 'rabl-rails'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'oj'
+gem 'oj_mimic_json'
+gem 'multi_json'
 gem 'faker'
 gem 'newrelic_rpm'
 
