@@ -21,6 +21,9 @@ gem 'roar'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'oj'
+gem 'oj_mimic_json'
+gem 'multi_json'
 gem 'faker'
 gem 'newrelic_rpm'
 
