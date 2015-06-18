@@ -27,6 +27,7 @@ gem 'oj_mimic_json'
 gem 'multi_json'
 gem 'faker'
 gem 'newrelic_rpm'
+gem 'benchmark-ips'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

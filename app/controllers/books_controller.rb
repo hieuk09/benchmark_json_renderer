@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all.includes(:author)
+    @books = Book.limit(50).includes(:author)
   end
 end
