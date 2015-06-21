@@ -1,1 +1,2 @@
-attributes :id, :name, :birthday, :info, :created_at, :updated_at
+object @author
+attributes :name, :birthday, :info

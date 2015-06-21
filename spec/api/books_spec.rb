@@ -7,7 +7,7 @@ describe 'books api' do
   let(:complex_params) { { type: 'complex' } }
 
   describe '/books' do
-    let!(:path) { "/books/" }
+    let!(:path) { "/books.json" }
 
     it 'benchmark' do
       Benchmark.ips do |x|
@@ -21,7 +21,7 @@ describe 'books api' do
 
   describe '/book/:id' do
     let(:book) { Book.last }
-    let!(:path) { "/books/#{book.id}" }
+    let!(:path) { "/books/#{book.id}.json" }
 
     it 'benchmarks' do
       Benchmark.ips do |x|
