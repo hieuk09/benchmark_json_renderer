@@ -1,9 +1,5 @@
 class Book < ActiveRecord::Base
   belongs_to :author
-
-  def as_json(*args)
-    super.merge(
-      author: author.as_json
-    )
-  end
+  has_many :related_books, foreign_key: 'genre', primary_key: 'genre', class_name: 'Book'
+  scope :latest, -> { limit(50) }
 end
