@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     template = set_template
-    render template
+    render partial: template, locals: { book: @book }
   end
 
   def set_template

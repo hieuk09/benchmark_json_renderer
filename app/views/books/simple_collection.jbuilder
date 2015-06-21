@@ -3,9 +3,5 @@ json.array! @books do |book|
   json.genre book.genre
   json.isbn book.isbn
 
-  json.author do
-    json.name book.author.name
-    json.birthday book.author.birthday
-    json.info book.author.info
-  end
+  json.author book.author, partial: 'books/author', as: :author
 end
