@@ -1,12 +1,11 @@
 require 'roar/json'
 require 'roar/decorator'
 
-class AuthorRepresenter < Roar::Decorator
+class Books::UltraSimple < Roar::Decorator
   include Roar::JSON
 
-  property :birthday
-  property :info
+  property :isbn
+  property :genre
   property :name
 end
-
 
