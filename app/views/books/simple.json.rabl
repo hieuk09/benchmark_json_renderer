@@ -1,6 +1,6 @@
 object @book
 
-extends 'books/ultra_simple'
+attributes :name, :isbn, :genre
 child :author do
   extends 'books/author'
 end
