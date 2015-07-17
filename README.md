@@ -19,3 +19,5 @@ Copy it into your project folder and you can run:
 chmod +x runner.sh
 ./runner.sh
 ```
+
+[Result (in Vietnamese)](http://kipalog.com/posts/So-sanh-toc-do-cac-thu-vien-render-JSON)
