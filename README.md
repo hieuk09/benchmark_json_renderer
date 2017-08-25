@@ -18,9 +18,7 @@ rake db:schema:load
 rake db:seed
 ```
 
-Now, you can start benchmarking using [this
-script](https://gist.github.com/hieuk09/fee5738786c7430d1da7).
-Copy it into your project folder and you can run:
+Now, you can start benchmarking using `runner.sh` with:
 
 ```shell
 chmod +x runner.sh
