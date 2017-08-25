@@ -17,9 +17,9 @@ describe Book do
 
     context 'collection' do
       let!(:books) { Book.latest.includes(:author, { related_books: :author }) }
-      let(:ultra_simple_books) { ActiveModel::ArraySerializer.new(books, each_serializer: Books::UltraSimple) }
-      let(:simple_books) { ActiveModel::ArraySerializer.new(books, each_serializer: Books::Simple) }
-      let(:complex_books) { ActiveModel::ArraySerializer.new(books, each_serializer: Books::Complex) }
+      let(:ultra_simple_books) { ActiveModelSerializers::SerializableResource.new(books, each_serializer: Books::UltraSimple) }
+      let(:simple_books) { ActiveModelSerializers::SerializableResource.new(books, each_serializer: Books::Simple) }
+      let(:complex_books) { ActiveModelSerializers::SerializableResource.new(books, each_serializer: Books::Complex) }
 
       it 'renders json' do
         Benchmark.ips do |x|
