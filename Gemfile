@@ -26,6 +26,7 @@ gem 'multi_json'
 gem 'faker'
 gem 'newrelic_rpm'
 gem 'benchmark-ips'
+gem 'grape-entity'
 
 group :development, :test do
   gem 'byebug'
