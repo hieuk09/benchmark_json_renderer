@@ -5,8 +5,7 @@ describe Book do
     context 'single' do
       def render_json(template, item)
         builder = ApplicationController.new.view_context
-        builder.instance_variable_set(:@book, item)
-        builder.render(file: template)
+        builder.render(partial: template, locals: { book: item })
       end
 
       let!(:book) { Book.last }
