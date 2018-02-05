@@ -3,30 +3,39 @@ require 'rails_helper'
 describe Book do
   describe 'render json' do
     context 'single' do
+      def render_json(template, item)
+        builder = ApplicationController.new.view_context
+        builder.instance_variable_set(:@book, item)
+        builder.render(file: template)
+      end
+
       let!(:book) { Book.last }
 
       it 'renders json' do
         Benchmark.ips do |x|
           x.config(time: 10, warmup: 2)
-          x.report('ultra simple') { Oj.dump(Books::UltraSimple.new(book).as_json) }
-          x.report('simple') { Oj.dump(Books::Simple.new(book).as_json) }
-          x.report('complex') { Oj.dump(Books::Complex.new(book).as_json) }
+          x.report('ultra simple') { Oj.dump(render_json('/books/ultra_simple', book)) }
+          x.report('simple') { Oj.dump(render_json('/books/simple', book)) }
+          x.report('complex') { Oj.dump(render_json('/books/complex', book)) }
         end
       end
     end
 
     context 'collection' do
+      def render_json(template, item)
+        builder = ApplicationController.new.view_context
+        builder.instance_variable_set(:@books, item)
+        builder.render(file: template)
+      end
+
       let!(:books) { Book.latest.includes(:author, { related_books: :author }) }
-      let(:ultra_simple_books) { books.map { |book| Books::UltraSimple.new(book) } }
-      let(:simple_books) { books.map { |book| Books::Simple.new(book) } }
-      let(:complex_books) { books.map { |book| Books::Complex.new(book) } }
 
       it 'renders json' do
         Benchmark.ips do |x|
           x.config(time: 10, warmup: 2)
-          x.report('collection ultra simple') { Oj.dump(ultra_simple_books.as_json) }
-          x.report('collection simple') { Oj.dump(simple_books.as_json) }
-          x.report('collection complex') { Oj.dump(complex_books.as_json) }
+          x.report('collection ultra simple') { Oj.dump(render_json('books/ultra_simple_collection', books)) }
+          x.report('collection simple') { Oj.dump(render_json('books/simple_collection', books)) }
+          x.report('collection complex') { Oj.dump(render_json('books/complex_collection', books)) }
         end
       end
     end

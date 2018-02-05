@@ -62,6 +62,9 @@ GEM
       domain_name (~> 0.5)
     i18n (0.9.3)
       concurrent-ruby (~> 1.0)
+    jbuilder (2.7.0)
+      activesupport (>= 4.2.0)
+      multi_json (>= 1.2)
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -161,6 +164,7 @@ DEPENDENCIES
   benchmark-ips
   byebug
   faker
+  jbuilder
   multi_json
   newrelic_rpm
   oj
