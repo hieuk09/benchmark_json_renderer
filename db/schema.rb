@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -16,24 +15,23 @@ ActiveRecord::Schema.define(version: 20150617165331) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "authors", force: :cascade do |t|
-    t.string   "name"
-    t.date     "birthday"
-    t.text     "info"
+  create_table "authors", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.date "birthday"
+    t.text "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "books", force: :cascade do |t|
-    t.string   "name"
-    t.string   "genre"
-    t.string   "isbn"
-    t.integer  "author_id"
+  create_table "books", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "genre"
+    t.string "isbn"
+    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_books_on_author_id"
   end
-
-  add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
 
   add_foreign_key "books", "authors"
 end
