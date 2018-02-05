@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '5.1.4'
 gem 'pg', '~> 0.18'
 
-gem 'active_model_serializers'
+gem 'fast_jsonapi'
 
 gem 'oj'
 gem 'oj_mimic_json'

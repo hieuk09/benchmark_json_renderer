@@ -2,15 +2,15 @@ class BooksController < ApplicationController
   def index
     books = Book.latest.includes(:author, { related_books: :author })
     klass = set_klass
-    presenter = ActiveModelSerializers::SerializableResource.new(books, each_serializer: klass)
-    render json: Oj.dump(presenter.as_json)
+    presenter = klass.new(books)
+    render json: presenter.serialized_json
   end
 
   def show
     book = Book.find(params[:id])
     klass = set_klass
     presenter = klass.new(book)
-    render json: Oj.dump(presenter.as_json)
+    render json: presenter.serialized_json
   end
 
   def set_klass
