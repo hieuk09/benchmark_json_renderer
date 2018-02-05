@@ -12,9 +12,9 @@ describe 'books api' do
     it 'benchmark' do
       Benchmark.ips do |x|
         x.config(time: 10, warmup: 2)
-        x.report('collection ultra simple') { get(path, ultra_simple_params) }
-        x.report('collection simple') { get path, simple_params }
-        x.report('collection complex') { get path, complex_params }
+        x.report('collection ultra simple') { get(path, params: ultra_simple_params) }
+        x.report('collection simple') { get path, params: simple_params }
+        x.report('collection complex') { get path, params: complex_params }
       end
     end
   end
@@ -26,9 +26,9 @@ describe 'books api' do
     it 'benchmarks' do
       Benchmark.ips do |x|
         x.config(time: 10, warmup: 2)
-        x.report('ultra simple') { get(path, ultra_simple_params) }
-        x.report('simple') { get path, simple_params }
-        x.report('complex') { get path, complex_params }
+        x.report('ultra simple') { get(path, params: ultra_simple_params) }
+        x.report('simple') { get path, params: simple_params }
+        x.report('complex') { get path, params: complex_params }
       end
     end
   end
